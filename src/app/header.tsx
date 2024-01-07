@@ -1,40 +1,42 @@
 "use client";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { Menu } from "lucide-react";
+
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import { SideMenu } from "./drawer";
 
 export function Header() {
-  const width = useMediaQuery("(min-width: 768px)");
-
   return (
-    <nav className="flex bg-red-300 px-2">
+    <nav className="flex justify-between bg-[#181a33] px-5 text-zinc-300">
       <div className="p-3">
-        <span>AVALIE SEU IMÓVEL COM A BDZ</span>
+        <h6>AVALIE SEU IMÓVEL COM A BDZ</h6>
       </div>
 
-      {width ? (
-        <>
-          <span className="flex justify-between w-full *:p-3 *:border-l-[1px]">
-            <div>
-              <span>INÍCIO</span>
-            </div>
-            <div>
-              <span>SOBRE NÓS</span>
-            </div>
-            <div>
-              <span>COMPRAR</span>
-            </div>
-            <div>
-              <span>VENDER</span>
-            </div>
-            <div className="border-r-[1px]">
-              <span>CONTATOS</span>
-            </div>
-          </span>
-        </>
-      ) : (
-        <>
-          <button>X</button>
-        </>
-      )}
+      <div className="grid-cols-5 *:py-3 *:border-l-[1px] w-[65%] items *:border-zinc-700 lg:grid hidden">
+        <button>INÍCIO</button>
+        <button>SOBRE NÓS</button>
+        <button>COMPRAR</button>
+        <button>VENDER</button>
+        <button className="border-r-[1px]">CONTATOS</button>
+      </div>
+      <button className="lg:hidden">
+        <Drawer>
+          <DrawerTrigger asChild>
+            <button>
+              <Menu />
+            </button>
+          </DrawerTrigger>
+          <SideMenu />
+        </Drawer>
+      </button>
     </nav>
   );
 }
