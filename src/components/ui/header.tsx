@@ -11,11 +11,11 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { SideMenu } from "./drawer";
+import { SideMenu } from "./sideMenu";
 
 export function Header() {
   return (
-    <nav className="flex justify-between bg-[#181a33] px-5 text-zinc-300">
+    <nav className="flex justify-between bg-[#181a33] px-2 md:px-5 text-zinc-300">
       <div className="p-3">
         <h6>AVALIE SEU IMÓVEL COM A BDZ</h6>
       </div>

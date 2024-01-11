@@ -1,12 +1,12 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -18,6 +18,14 @@ const config = {
       },
     },
     extend: {
+      gridTemplateColumns: {
+        searchBar: "2fr 1fr 4fr 1fr",
+      },
+
+      backgroundImage: {
+        hero: "url('https://cdn.sanity.io/images/0h9mrknt/production/ae97a36a78dae84412655d579c8185fdc4de5061-1821x1024.png')",
+      },
+
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -35,6 +43,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;

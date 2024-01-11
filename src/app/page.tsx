@@ -1,15 +1,13 @@
-import { Header } from "./header";
-import { About } from "./about";
-import { SearchBar } from "./searchBar";
-import { HeroSection } from "./heroSection";
+import { AboutSection } from "@/components/ui/aboutSection";
+import { Header } from "../components/ui/header";
+import { HeroSection } from "../components/ui/heroSection";
 
 export default function Home() {
   return (
     <main className="">
       <Header />
       <HeroSection />
-      <SearchBar />
-      <About />
+      <AboutSection />
     </main>
   );
 }
